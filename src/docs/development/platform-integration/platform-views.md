@@ -94,8 +94,12 @@ Widget build(BuildContext context) {
         layoutDirection: TextDirection.ltr,
         creationParams: creationParams,
         creationParamsCodec: StandardMessageCodec(),
+        onFocus: () {
+          params.onFocusChanged(true);
+        } ,
       )
         ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
+        
         ..create();
     },
   );
